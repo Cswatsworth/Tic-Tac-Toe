@@ -26,4 +26,12 @@ class  Board
 			true
 		end
 	end
+
+	def valid_input?(input)
+		if input.match(/[XxOo]/)
+			true
+		else
+			false
+		end
+	end
 end
