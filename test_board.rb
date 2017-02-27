@@ -31,9 +31,15 @@ class TestTicTacToe < Minitest::Test
 	def test_check_if_position_is_avaliable
 		board = Board.new
 		board.ttt_board = ['X','O','','O','','','','','']
-		assert_equal(true, board.valid_position?(6))
+		assert_equal(true, board.valid_position?(6)) # ? lets you know its a boolean
 		assert_equal(false, board.valid_position?(0))
 		assert_equal(false, board.valid_position?(15))
 		assert_equal(true, board.valid_position?(8))
 	end
-end	
+
+	def test_for_a_full_board
+		board = Board.new
+		board.ttt_board = ['X','O','X','O','X','O','X','O','']
+		assert_equal(false, board.game_tie?)
+	end
+end

@@ -18,4 +18,12 @@ class  Board
 			false
 		end
 	end
-end 
+
+	def game_tie?
+		if ttt_board.include?('')
+			false
+		else
+			true
+		end
+	end
+end
