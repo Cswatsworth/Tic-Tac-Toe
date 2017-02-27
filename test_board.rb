@@ -34,6 +34,6 @@ class TestTicTacToe < Minitest::Test
 		assert_equal(true, board.valid_position?(6))
 		assert_equal(false, board.valid_position?(0))
 		assert_equal(false, board.valid_position?(15))
+		assert_equal(true, board.valid_position?(8))
 	end
-
 end	
