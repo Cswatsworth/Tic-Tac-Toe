@@ -32,5 +32,8 @@ class TestTicTacToe < Minitest::Test
 		board = Board.new
 		board.ttt_board = ['X','O','','O','','','','','']
 		assert_equal(true, board.valid_position?(6))
+		assert_equal(false, board.valid_position?(0))
+		assert_equal(false, board.valid_position?(15))
 	end
+
 end	
