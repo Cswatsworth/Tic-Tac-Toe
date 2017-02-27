@@ -57,4 +57,11 @@ class TestTicTacToe < Minitest::Test
 		assert_equal(false, board.valid_input?(''))
 		assert_equal(false, board.valid_input?('@'))
 	end
+
+	def test_for_win_at_positions_0_1_2_with_x
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X','X','X','O','','O','','O','']
+		assert_equal(true, board.winner?(marker))
+	end
 end

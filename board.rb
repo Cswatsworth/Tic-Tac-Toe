@@ -34,4 +34,8 @@ class  Board
 			true
 		end
 	end
+
+	def winner?(marker)
+		if ttt_board
+	end
 end
