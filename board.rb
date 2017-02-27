@@ -12,7 +12,7 @@ class  Board
 	end
 
 	def valid_position?(position)
-		if ttt_board[position] = ''
+		if ttt_board[position] == ''
 			true
 		else
 			false
