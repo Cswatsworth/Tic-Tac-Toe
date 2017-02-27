@@ -19,19 +19,19 @@ class  Board
 		end
 	end
 
-	def game_tie?
-		if ttt_board.include?('')
-			false
-		else
-			true
-		end
-	end
-
 	def valid_input?(input)
 		if input.match(/[XxOo]/)
 			true
 		else
 			false
+		end
+	end
+
+	def game_tie?
+		if ttt_board.include?('')
+			false
+		else
+			true
 		end
 	end
 end

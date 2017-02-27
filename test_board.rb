@@ -49,9 +49,12 @@ class TestTicTacToe < Minitest::Test
 		assert_equal(true, board.game_tie?)
 	end
 
-	def valid_input_of_x_and_o
+	def test_valid_input_of_x_and_o
 		board = Board.new
-		assert_equal(false, valid_input?('m'))
-		
+		assert_equal(false, board.valid_input?('m'))
+		assert_equal(true, board.valid_input?('O'))
+		assert_equal(true, board.valid_input?('X'))
+		assert_equal(false, board.valid_input?(''))
+		assert_equal(false, board.valid_input?('@'))
 	end
 end
