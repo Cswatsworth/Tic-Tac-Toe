@@ -64,4 +64,33 @@ class TestTicTacToe < Minitest::Test
 		board.ttt_board = ['X','X','X','O','','O','','O','']
 		assert_equal(true, board.winner?(marker))
 	end
+
+	def test_for_false_winning_position_1_2_3
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X','X','O','O','','O','','O','']
+		assert_equal(false, board.winner?(marker))
+		
+	end
+
+	def test_for_win_at_position_3_4_5_with_O
+		board = Board.new
+		marker = 'O'
+		board.ttt_board = ['X','O','X','X','O','O','','O','']
+		assert_equal(false, board.winner?(marker))
+	end
+
+	def test_for_win_at_position_3_4_5_with_O_true
+		board = Board.new
+		marker = 'O'
+		board.ttt_board = ['X','O','X','O','O','O','','O','']
+		assert_equal(true, board.winner?(marker))
+	end
+
+	def test_for_win_at_position_6_7_8_true
+		board = Board.new
+		marker = 'X'
+		board.ttt_board = ['X','O','X','O','O','','X','X','X']
+		assert_equal(true, board.winner?(marker))
+	end
 end
