@@ -53,7 +53,7 @@ class  Board
 		ttt_board[2] == marker && ttt_board[4]  == marker  && ttt_board[6] == marker
 		 end
 
-	# 	if winners = [
+	# 	winners = [
 	# 		[0, 1, 2],
 	# 		[3, 4, 5],
 	# 		[6, 7, 8],
