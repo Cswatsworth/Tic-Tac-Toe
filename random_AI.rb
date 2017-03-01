@@ -5,6 +5,6 @@ class Random_AI
 	end
 
 	def get_move(board)
-		bord.each_index.select{ |empty| board[empty] == ''}.sample
+		board.each_index.select{ |empty| board[empty] == ''}.sample
 	end
 end
