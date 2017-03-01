@@ -40,7 +40,17 @@ class  Board
 		
 		 ttt_board[3] == marker && ttt_board[4] == marker && ttt_board[5] == marker ||
 			 	
-		 ttt_board[6] == marker && ttt_board[7]  == marker  && ttt_board[8] == marker
+		 ttt_board[6] == marker && ttt_board[7]  == marker  && ttt_board[8] == marker ||
+		 
+		 ttt_board[0] == marker && ttt_board[3]  == marker  && ttt_board[6] == marker ||
+		 
+		 ttt_board[1] == marker && ttt_board[4]  == marker  && ttt_board[7] == marker ||
+
+		 ttt_board[2] == marker && ttt_board[5]  == marker  && ttt_board[8] == marker ||
+
+		 ttt_board[0] == marker && ttt_board[4]  == marker  && ttt_board[8] == marker ||
+
+		ttt_board[2] == marker && ttt_board[4]  == marker  && ttt_board[6] == marker
 		 end
 
 	# 	if winners = [
