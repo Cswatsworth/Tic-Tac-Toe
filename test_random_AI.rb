@@ -18,4 +18,8 @@ class TestRandomAiFunction < Minitest::Test
 		assert_equal(true, [0, 1, 2].include?(ai_player.get_move(['','','','X','X','X','X','X','X'])))
 	end
 
+	def test_empty_board_random_spot
+		ai_player = Random_AI.new('X')
+		assert_equal(true, [0, 1, 2, 3, 4, 5, 6, 7, 8,].include?(ai_player.get_move(['','','','','','','','',''])))
+	end
 end

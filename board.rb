@@ -51,21 +51,39 @@ class  Board
 		 ttt_board[0] == marker && ttt_board[4]  == marker  && ttt_board[8] == marker ||
 
 		ttt_board[2] == marker && ttt_board[4]  == marker  && ttt_board[6] == marker
-		 end
-
-	# 	winners = [
-	# 		[0, 1, 2],
-	# 		[3, 4, 5],
-	# 		[6, 7, 8],
-	# 		[0, 3, 6],
-	# 		[1, 4, 7],
-	# 		[2, 5, 8],
-	# 		[0, 4, 8],
-	# 		[2, 4, 6]
-	# 	]
-	# 		results = true
-	# 	else 
-	# 		false
-	# 	end
-	# end
+	end
 end
+							
+
+
+
+
+
+
+
+							# 	winner = [
+							# 		[0, 1, 2],
+							# 		[3, 4, 5],
+							# 		[6, 7, 8],
+							# 		[0, 3, 6],
+							# 		[1, 4, 7],
+							# 		[2, 5, 8],
+							# 		[0, 4, 8],
+							# 		[2, 4, 6]
+							# 	]
+							# 		results = false
+							# 	winner.each do |nested_array|
+							# 		count = 0
+
+							# 		nested_array.each do |combinations|
+							# 			if ttt_board[combinations] == marker
+							# 				count =+ 1
+
+							# 				if count == 3
+							# 					results = true
+							# 				end
+							# 			end
+							# 		end
+							# 	end
+							# 	results
+							# end
