@@ -2,6 +2,7 @@ require_relative 'board.rb'
 require_relative 'sequential_AI.rb'
 require_relative 'random_AI.rb'
 require_relative 'human.rb'
+require_relative 'unbeatable.rb'
 
 class ConsoleGame
 	attr_accessor :board, :player1, :player2, :active_player, :input1, :input2
@@ -76,7 +77,8 @@ class ConsoleGame
 	puts "Select player 1 mode by entering the following;"
 	puts "1 - For Easy AI"
 	puts "2 - For Pro AI"
-	puts "3 - For User Play"
+	puts "3 - For Unbeatable"
+	puts "4 - For User Play"
 	puts "-----------------"
 	@input1 = gets.chomp.to_i
 
@@ -86,8 +88,13 @@ class ConsoleGame
 			elsif input1 == 2
 				@player1 =  Random_AI.new('X')
 
-			else input1 == 3
+			elsif input1 == 3
+				@player = Unbeatable.new('X')
+
+			elsif input1 == 4
 				@player1 = Human.new('X')
+			
+			else input1 'Try Again'
 			end
 		
 	end
@@ -97,7 +104,8 @@ class ConsoleGame
 	puts "Select player 2 mode by entering the following;"
 	puts "1 - For Easy AI"
 	puts "2 - For Pro AI"
-	puts "3 - For User Play"
+	puts "3 - For Unbeatable"
+	puts "4 - For User Play"
 	puts "-----------------"
 
 		@input2 = gets.chomp.to_i
@@ -108,8 +116,13 @@ class ConsoleGame
 			elsif input2 == 2
 				@player2 = Random_AI.new('O')
 
-			else input2 == 3
+			elsif input2 == 3
+				@player2 = Unbeatable.new('O')
+
+			elsif input2 == 4
 				@player2 = Human.new('O')
+			
+			else input2 'Try Again'
 			end
 
 	end				
