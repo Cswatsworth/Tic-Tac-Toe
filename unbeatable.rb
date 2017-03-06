@@ -34,15 +34,15 @@ class Unbeatable
 				
 				if 
 					win_combo.count(marker) == 2 &&win_combo.count('') == 1
-					winning_pos = win_combo.index('')
+					winning_pos = win_combo.index('') 
 					results = win_array[index][winning_pos]
-				elsif 
-					win_combo.count(opponent) == 2 &&win_combo.count('') == 1
+				elsif win_combo.count(opponent) == 2 && win_combo.count('') == 1
 					winning_pos = win_combo.index('')
-					results = win_array[index][winning_pos]
-					results 
-				end
+					results = win_array[index][winning_pos] 
+				else 
+					results
 
+				end
 			end
 		results
 	end
