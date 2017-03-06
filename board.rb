@@ -2,7 +2,7 @@ class  Board
 	attr_accessor :ttt_board #allows them to read + WRITE #:attaches to what you initialized
 	
 	def initialize()
-		@ttt_board = Array.new(9, '')#instance variable
+		@ttt_board = Array.new(9, ' ')#instance variable
 
 	end
 
@@ -12,7 +12,7 @@ class  Board
 	end
 
 	def valid_position?(position)
-		if ttt_board[position] == ''
+		if ttt_board[position] == ' '
 			true
 		else
 			false
@@ -27,8 +27,8 @@ class  Board
 		end
 	end
 
-	def game_tie?
-		if ttt_board.include?('')
+	def full_board?
+		if ttt_board.include?(' ')
 			false
 		else
 			true
@@ -55,35 +55,32 @@ class  Board
 end
 							
 
+			# winner = [
+			# 	[0, 1, 2],
+			# 	[3, 4, 5],
+			# 	[6, 7, 8],
+			# 	[0, 3, 6],
+			# 	[1, 4, 7],
+			# 	[2, 5, 8],
+			# 	[0, 4, 8],
+			# 	[2, 4, 6]
+			# 				]
+			# 		results = false
+						
+			# 			winner.each do |win|
+							
+			# 				count = 0
 
+			# 					winner.each do |position|
+			# 							if ttt_board[position] == marker
+			# 								count =+ 1
 
-
-
-
-
-							# 	winner = [
-							# 		[0, 1, 2],
-							# 		[3, 4, 5],
-							# 		[6, 7, 8],
-							# 		[0, 3, 6],
-							# 		[1, 4, 7],
-							# 		[2, 5, 8],
-							# 		[0, 4, 8],
-							# 		[2, 4, 6]
-							# 	]
-							# 		results = false
-							# 	winner.each do |nested_array|
-							# 		count = 0
-
-							# 		nested_array.each do |combinations|
-							# 			if ttt_board[combinations] == marker
-							# 				count =+ 1
-
-							# 				if count == 3
-							# 					results = true
-							# 				end
-							# 			end
-							# 		end
-							# 	end
-							# 	results
-							# end
+			# 								if count == 3
+												
+			# 									results = true
+			# 								end
+			# 							end
+			# 					end
+			# 		end
+			# results
+		#end

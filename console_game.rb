@@ -4,11 +4,11 @@ require_relative 'random_AI.rb'
 require_relative 'human.rb'
 
 class ConsoleGame
-	attr_accessor :board, :player1, :player2, :active_player
+	attr_accessor :board, :player1, :player2, :active_player, :input1, :input2
 
-	def initialize(player1, player2)
-		@player1 = player1
-		@player2 = player2 
+	def initialize()
+		@player1 = get_player1
+		@player2 = get_player2 
 		@board = Board.new
 		@active_player = player1
 	end
@@ -28,57 +28,16 @@ class ConsoleGame
 	puts "                                                                       "
 	end
 
-		def player_1
-
-	puts "Select player 1 mode by entering the following;"
-	puts "1 - For Easy AI"
-	puts "2 - For Pro AI"
-	puts "3 - For User Play"
-
-	@input = gets.chomp.to_i
-
-			if input == 1
-				@player1 = Sequential_AI.new('X')
-
-			elsif input == 2
-				@player1 =  Random_AI.new('X')
-
-			else input == 3
-				@player1 = Human.new('X')
-			end
-	end
-
-	def player_2
-
-	puts "Select player 1 mode by entering the following;"
-	puts "1 - For Easy AI"
-	puts "2 - For Pro AI"
-	puts "3 - For User Play"
-
-	@input = gets.chomp.to_i
-
-			if input == 1 
-				@player2 = Sequential_AI.new('O')
-			
-			elsif input == 2
-				@player2 = Random_AI.new('O')
-
-			else input == 3
-				@player2 = Human.new('O')
-			end
-	end
-
-
-
 
 	def get_move
-		active_player.get_move(board.ttt_board)
+		@move = active_player.get_move(board.ttt_board)
 	end
 
 	def update_position
-		move = get_move
 		marker = active_player.marker
-		board.update_position(move, marker)
+		board.update_position(@move, marker)
+		
+
 
 	end
 
@@ -93,19 +52,61 @@ class ConsoleGame
 	
 	def check_winner
 		if board.winner?(active_player.marker)
-			true
-		else
+				true
+		else				
 			false
 		end
 	end
 
-	def full_board
-		if board.game_tie?()
+	def full_board?
+		if board.full_board?()
 			
 			true
 		else
 			 false
 		end
 	end
-				
+	
+	def get_player1
+
+	puts "Select player 1 mode by entering the following;"
+	puts "1 - For Easy AI"
+	puts "2 - For Pro AI"
+	puts "3 - For User Play"
+
+	@input1 = gets.chomp.to_i
+
+			if input1 == 1
+				@player1 = Sequential_AI.new('X')
+
+			elsif input1 == 2
+				@player1 =  Random_AI.new('X')
+
+			else input1 == 3
+				@player1 = Human.new('X')
+			end
+		
+	end
+
+	def get_player2
+
+	puts "Select player 2 mode by entering the following;"
+	puts "1 - For Easy AI"
+	puts "2 - For Pro AI"
+	puts "3 - For User Play"
+
+		@input2 = gets.chomp.to_i
+			
+			if input2 == 1 
+				@player2 = Sequential_AI.new('O')
+			
+			elsif input2 == 2
+				@player2 = Random_AI.new('O')
+
+			else input2 == 3
+				@player2 = Human.new('O')
+			end
+
+	end				
+
 end

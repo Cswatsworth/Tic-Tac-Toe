@@ -1,10 +1,10 @@
 require 'minitest/autorun'
-require_relative 'player_classes.rb'
+require_relative 'human.rb'
 
-class TestPlayerClass < Minitest::Test
+class TestUserPlayer < Minitest::Test
 
-	def test_player_move
+	def test_get_player_move
 		player = Human.new('X')
-		assert_equal(0, player.get_move(''))
+		assert_equal(0, player.get_move('position'))
 	end
 end
