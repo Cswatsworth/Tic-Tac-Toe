@@ -20,22 +20,26 @@ class ConsoleGame
 
 	def display_board
 
-  	puts " #{board.ttt_board[0]} | #{board.ttt_board[1]} | #{board.ttt_board[2]} "
+  	puts " #{board.ttt_board[7]} | #{board.ttt_board[8]} | #{board.ttt_board[9]} "
   	puts "-----------"
-  	puts " #{board.ttt_board[3]} | #{board.ttt_board[4]} | #{board.ttt_board[5]} "
+  	puts " #{board.ttt_board[4]} | #{board.ttt_board[5]} | #{board.ttt_board[6]} "
   	puts "-----------"
-  	puts " #{board.ttt_board[6]} | #{board.ttt_board[7]} | #{board.ttt_board[8]} "
+  	puts " #{board.ttt_board[1]} | #{board.ttt_board[2]} | #{board.ttt_board[3]} "
 	puts "                                                                       "
+	puts	"It is #{active_player.marker}'s turn."
+	puts"                                                                        "
 	end
+
 
 
 	def get_move
-		@move = active_player.get_move(board.ttt_board)
+		active_player.get_move(board.ttt_board)
 	end
 
 	def update_position
+		move = get_move
 		marker = active_player.marker
-		board.update_position(@move, marker)
+		board.update_position(move, marker)
 		
 
 
@@ -73,7 +77,7 @@ class ConsoleGame
 	puts "1 - For Easy AI"
 	puts "2 - For Pro AI"
 	puts "3 - For User Play"
-
+	puts "-----------------"
 	@input1 = gets.chomp.to_i
 
 			if input1 == 1
@@ -94,6 +98,7 @@ class ConsoleGame
 	puts "1 - For Easy AI"
 	puts "2 - For Pro AI"
 	puts "3 - For User Play"
+	puts "-----------------"
 
 		@input2 = gets.chomp.to_i
 			

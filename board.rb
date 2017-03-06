@@ -2,7 +2,7 @@ class  Board
 	attr_accessor :ttt_board #allows them to read + WRITE #:attaches to what you initialized
 	
 	def initialize()
-		@ttt_board = Array.new(9, ' ')#instance variable
+		@ttt_board = Array.new(9, '')#instance variable
 
 	end
 
@@ -12,7 +12,7 @@ class  Board
 	end
 
 	def valid_position?(position)
-		if ttt_board[position] == ' '
+		if ttt_board[position] == ''
 			true
 		else
 			false
@@ -28,7 +28,7 @@ class  Board
 	end
 
 	def full_board?
-		if ttt_board.include?(' ')
+		if ttt_board.include?('')
 			false
 		else
 			true

@@ -5,16 +5,16 @@ game = ConsoleGame.new
 
 game.intro
 
-#until game.check_winner || game.full_board?
-	#game.change_player
+until game.check_winner || game.full_board?
+	game.change_player
 	game.display_board
-	game.get_move
 	game.update_position
-#end
+end
+	game.display_board
 
-# if game.check_winner?
-# 	puts "#{game.active_player.marker} WINS!"
-# else
+if game.check_winner
+	puts "#{game.active_player.marker} WINS!"
+ else
 
-# puts "ITS A TIE!"
-# end
+ puts "ITS A TIE!"
+ end
