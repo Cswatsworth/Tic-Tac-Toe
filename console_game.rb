@@ -1,6 +1,7 @@
 require_relative 'board.rb'
 require_relative 'sequential_AI.rb'
 require_relative 'random_AI.rb'
+require_relative 'human.rb'
 
 class ConsoleGame
 	attr_accessor :board, :player1, :player2, :active_player
@@ -27,6 +28,49 @@ class ConsoleGame
 	puts "                                                                       "
 	end
 
+		def player_1
+
+	puts "Select player 1 mode by entering the following;"
+	puts "1 - For Easy AI"
+	puts "2 - For Pro AI"
+	puts "3 - For User Play"
+
+	@input = gets.chomp.to_i
+
+			if input == 1
+				@player1 = Sequential_AI.new('X')
+
+			elsif input == 2
+				@player1 =  Random_AI.new('X')
+
+			else input == 3
+				@player1 = Human.new('X')
+			end
+	end
+
+	def player_2
+
+	puts "Select player 1 mode by entering the following;"
+	puts "1 - For Easy AI"
+	puts "2 - For Pro AI"
+	puts "3 - For User Play"
+
+	@input = gets.chomp.to_i
+
+			if input == 1 
+				@player2 = Sequential_AI.new('O')
+			
+			elsif input == 2
+				@player2 = Random_AI.new('O')
+
+			else input == 3
+				@player2 = Human.new('O')
+			end
+	end
+
+
+
+
 	def get_move
 		active_player.get_move(board.ttt_board)
 	end
@@ -44,7 +88,7 @@ class ConsoleGame
 		else
 			@active_player = player1
 		end
-		 active_player
+		 
 	end
 	
 	def check_winner
@@ -55,13 +99,13 @@ class ConsoleGame
 		end
 	end
 
-	def check_tie
+	def full_board
 		if board.game_tie?()
 			
-			puts true
+			true
 		else
-			puts false
+			 false
 		end
 	end
-
+				
 end
