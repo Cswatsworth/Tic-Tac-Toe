@@ -19,13 +19,25 @@ class ConsoleGame
 
 	end
 
+	# def display_board
+
+ #  	puts " #{board.ttt_board[7]} | #{board.ttt_board[8]} | #{board.ttt_board[9]} "
+ #  	puts "-----------"
+ #  	puts " #{board.ttt_board[4]} | #{board.ttt_board[5]} | #{board.ttt_board[6]} "
+ #  	puts "-----------"
+ #  	puts " #{board.ttt_board[1]} | #{board.ttt_board[2]} | #{board.ttt_board[3]} "
+	# puts "                                                                       "
+	# puts	"It is #{active_player.marker}'s turn."
+	# puts"                                                                        "
+	# end
+
 	def display_board
 
-  	puts " #{board.ttt_board[7]} | #{board.ttt_board[8]} | #{board.ttt_board[9]} "
+  	puts " #{board.ttt_board[0]} | #{board.ttt_board[1]} | #{board.ttt_board[2]} "
   	puts "-----------"
-  	puts " #{board.ttt_board[4]} | #{board.ttt_board[5]} | #{board.ttt_board[6]} "
+  	puts " #{board.ttt_board[3]} | #{board.ttt_board[4]} | #{board.ttt_board[5]} "
   	puts "-----------"
-  	puts " #{board.ttt_board[1]} | #{board.ttt_board[2]} | #{board.ttt_board[3]} "
+  	puts " #{board.ttt_board[6]} | #{board.ttt_board[7]} | #{board.ttt_board[8]} "
 	puts "                                                                       "
 	puts	"It is #{active_player.marker}'s turn."
 	puts"                                                                        "
@@ -39,11 +51,15 @@ class ConsoleGame
 
 	def update_position
 		move = get_move
-		marker = active_player.marker
-		board.update_position(move, marker)
-		
+		if board.valid_position?(move) 
+			marker = active_player.marker
+			board.update_position(move, marker)
+		else
+			puts 'ERROR'
+			puts 'Invalid Input, Space Already Full'
 
-
+			update_position
+		end
 	end
 
 	def change_player
@@ -94,7 +110,10 @@ class ConsoleGame
 			elsif input1 == 4
 				@player1 = Human.new('X')
 			
-			else input1 'Try Again'
+			else  
+					puts "input invalid, please pick 1, 2, or 3."
+					get_player1
+	
 			end
 		
 	end
@@ -122,7 +141,8 @@ class ConsoleGame
 			elsif input2 == 4
 				@player2 = Human.new('O')
 			
-			else input2 'Try Again'
+			else 	puts "input invalid, please pick 1, 2, or 3."
+					get_player2
 			end
 
 	end				
