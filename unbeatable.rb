@@ -46,4 +46,56 @@ class Unbeatable
 			end
 		results
 	end
+
+	def check_for_fork(ttt_board)
+
+		fork_combinations = [
+							[ttt_board[0],ttt_board[1],ttt_board[2]],
+							[ttt_board[3],ttt_board[4],ttt_board[5]],
+							[ttt_board[6], ttt_board[7], ttt_board[8]],
+							[ttt_board[0], ttt_board[3], ttt_board[6]],
+							[ttt_board[1],ttt_board[4], ttt_board[7]],
+							[ttt_board[2],ttt_board[5],ttt_board[8]], 
+							[ttt_board[0], ttt_board[4], ttt_board[8]],
+							[ttt_board[2],ttt_board[4],ttt_board[6]]
+							]
+
+		fork_positions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+
+		fork_line = []
+		fork_spot = [] # new array for when you flatten
+		i = []  #index positions
+
+		fork_combinations.each_with_index do |forking_line, index|
+			if forking_line.count(marker) == 1 && forking_line.count("") == 2
+				fork_line = forking_line
+				i.push(index)
+			end
+		end 
+
+		i.each do |index|
+			fork_spot << fork_positions[index]
+		end
+		p fork_spot
+		fork_spot = fork_spot.flatten.sort #flattens array, takes forks position arrays, puts in fork positions array
+		
+		intersections = []
+		fork_spot.each do |spot| 
+			if ttt_board[spot] == ""
+				intersections.push(spot)
+			end
+
+		end
+		
+		
+		if intersections.detect { |match| intersections.count(match) > 1 } == nil
+			
+			move = 10
+
+		else
+			move = intersections.detect { |match| intersections.count(match) > 1}
+		end
+		move
+	end
+
 end

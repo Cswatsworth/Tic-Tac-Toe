@@ -90,7 +90,7 @@ class ConsoleGame
 	
 	def get_player1
 
-	puts "Select player 1 mode by entering the following;"
+	puts "Select player 'X' by entering the following;"
 	puts "1 - For Easy AI"
 	puts "2 - For Pro AI"
 	puts "3 - For Unbeatable"
@@ -120,7 +120,7 @@ class ConsoleGame
 
 	def get_player2
 
-	puts "Select player 2 mode by entering the following;"
+	puts "Select player 'O'by entering the following;"
 	puts "1 - For Easy AI"
 	puts "2 - For Pro AI"
 	puts "3 - For Unbeatable"
