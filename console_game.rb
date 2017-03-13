@@ -19,18 +19,6 @@ class ConsoleGame
 
 	end
 
-	# def display_board
-
- #  	puts " #{board.ttt_board[7]} | #{board.ttt_board[8]} | #{board.ttt_board[9]} "
- #  	puts "-----------"
- #  	puts " #{board.ttt_board[4]} | #{board.ttt_board[5]} | #{board.ttt_board[6]} "
- #  	puts "-----------"
- #  	puts " #{board.ttt_board[1]} | #{board.ttt_board[2]} | #{board.ttt_board[3]} "
-	# puts "                                                                       "
-	# puts	"It is #{active_player.marker}'s turn."
-	# puts"                                                                        "
-	# end
-
 	def display_board
 
   	puts " #{board.ttt_board[0]} | #{board.ttt_board[1]} | #{board.ttt_board[2]} "
@@ -39,8 +27,13 @@ class ConsoleGame
   	puts "-----------"
   	puts " #{board.ttt_board[6]} | #{board.ttt_board[7]} | #{board.ttt_board[8]} "
 	puts "                                                                       "
-	puts	"It is #{active_player.marker}'s turn."
-	puts"                                                                        "
+		if check_winner == true
+		puts "Game Over"
+
+		else
+		puts "It is #{active_player.marker}'s turn."
+		
+		end
 	end
 
 
@@ -111,7 +104,7 @@ class ConsoleGame
 				@player1 = Human.new('X')
 			
 			else  
-					puts "input invalid, please pick 1, 2, or 3."
+					puts "input invalid, please pick 1, 2, 3, or 4."
 					get_player1
 	
 			end
@@ -120,7 +113,8 @@ class ConsoleGame
 
 	def get_player2
 
-	puts "Select player 'O'by entering the following;"
+
+	puts "Select player 'O' by entering the following;"
 	puts "1 - For Easy AI"
 	puts "2 - For Pro AI"
 	puts "3 - For Unbeatable"

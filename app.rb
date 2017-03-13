@@ -3,9 +3,11 @@ require 'sinatra'
 class TicTacToeApp < Sinatra::Base
 		
 	get '/' do
-		erb :name
+		erb :greeting
 	end
 
-	post '/name' do
+	post '/greeting' do
+		greeting = params[:greeting_input]
+		erb :greeting, locals: {greeting: greeting}
 	end
 end
