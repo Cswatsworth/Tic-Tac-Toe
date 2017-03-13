@@ -45,6 +45,8 @@ class TestUnbeatable < Minitest::Test
 		assert_equal(6, player.get_move(board_array))
 	end
 
+	#BLOCK
+
 	def test_block1
 		player = Unbeatable.new('O')
 		board_array = ['X','X','','','','','','','']
@@ -69,6 +71,8 @@ class TestUnbeatable < Minitest::Test
 		assert_equal(6, player.get_move(board_array))
 	end
 
+	#FORK
+
 	def test_fork_1
 		player = Unbeatable.new('X')
 		board_array = ['X','O','','O','','','X','','']
@@ -79,5 +83,19 @@ class TestUnbeatable < Minitest::Test
 		player = Unbeatable.new('O')
 		board_array = ['','x','','','O','X','','O','']
 		assert_equal(6, player.check_for_fork(board_array))
+	end
+
+	#BLOCK FORK
+
+	def test_block_fork
+		player = Unbeatable.new('O')
+		board_array = ['', 'X', '', '', 'O', 'X', '', 'O', '']
+		assert_equal(2, player.block_fork(board_array))
+	end
+
+	def test_block_fork_four
+		player = Unbeatable.new('X')
+		board_array = ['O', 'X', '', 'X', '', '', 'O', '', '']
+		assert_equal(4, player.block_fork(board_array))
 	end
 end
