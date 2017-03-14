@@ -1,2 +1,2 @@
-require 'app.rb'
-TicTacToeApp.run! #rackup
+require './app.rb'
+run TicTacToeApp #rackup
