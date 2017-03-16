@@ -1,32 +1,28 @@
-<center><h1>LET'S PLAY!</h1>
 
-<form method="post" action="/play_game">
+		<center><h1>LET'S PLAY!</h1>
+    <br>
+    <center><h2>You Chose <%=opponent%></h2></center>
 
+ 	<!-- <form method="post" action="/play_game"> -->
+<style>
+table, tr, td {
+  border: 2px solid black;
+}
 
-<a href="/">RESTART</a>
-  </div>
-
-
-
-
-<div id="board">
-    <table>
-      <tr id="row1">
-        <td class="square"></td>
-        <td class="square"></td>
-        <td class="square"></td>
-      </tr>
-      <tr id="row2">
-        <td class="square"></td>
-        <td class="square"></td>
-        <td class="square"></td>
-      </tr>
-      <tr id="row3">
-        <td class="square"></td>
-        <td class="square"></td>
-        <td class="square"></td>
-      </tr>
-    </table>
-  </div>
-
-</form></center>
+	<table>
+  <tr>
+    <td><%=board.ttt_board[0]%></td>
+    <td><%=board.ttt_board[1]%></td>
+    <td><%=board.ttt_board[2]%></td>
+  </tr>
+  <tr>
+    <td><%=board.ttt_board[3]%></td>
+    <td><%=board.ttt_board[4]%></td>
+    <td><%=board.ttt_board[5]%></td>
+  </tr>
+  <tr>
+    <td><%=board.ttt_board[6]%></td>
+    <td><%=board.ttt_board[7]%></td>
+    <td><%=board.ttt_board[8]%></td>
+  </tr>
+</table>
