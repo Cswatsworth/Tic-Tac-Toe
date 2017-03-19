@@ -1,28 +1,43 @@
-
+<html>
 		<center><h1>LET'S PLAY!</h1>
     <br>
-    <center><h2>You Chose <%=opponent%></h2></center>
+    <center><h3>Playing against <%=opponent%></h3></center>
 
- 	<!-- <form method="post" action="/play_game"> -->
-<style>
-table, tr, td {
-  border: 2px solid black;
-}
+ 	<form method="post" action="/play_game"></form>
 
-	<table>
+    <select text='marker' value='X'>
+        <option value=></option>
+
+     <select text='marker'>
+        <option value=></option>
+    
+
+
+
+
+
+
+	<table width="50">
   <tr>
-    <td><%=board.ttt_board[0]%></td>
-    <td><%=board.ttt_board[1]%></td>
-    <td><%=board.ttt_board[2]%></td>
+    <td><input type='submit' value='<%=board.ttt_board[0]%>' name='choice'></td>
+    <td><input type='submit' value='<%=board.ttt_board[1]%>' name='choice'></td>
+    <td><input type='submit' value='<%=board.ttt_board[2]%>' name='choice'></td>
   </tr>
+  
   <tr>
-    <td><%=board.ttt_board[3]%></td>
-    <td><%=board.ttt_board[4]%></td>
-    <td><%=board.ttt_board[5]%></td>
+    
+    <td><input type='submit' value='<%=board.ttt_board[3]%>' name='choice'></td>
+    <td><input type='submit' value='<%=board.ttt_board[4]%>' name='choice'></td>
+    <td><input type='submit' value='<%=board.ttt_board[5]%>' name='choice'></td>
   </tr>
+  
   <tr>
-    <td><%=board.ttt_board[6]%></td>
-    <td><%=board.ttt_board[7]%></td>
-    <td><%=board.ttt_board[8]%></td>
-  </tr>
+    
+    <td><input type='submit' value='<%=board.ttt_board[6]%>' name='choice'></td>
+    <td><input type='submit' value='<%=board.ttt_board[7]%>' name='choice'></td>
+    <td><input type='submit' value='<%=board.ttt_board[8]%>' name='choice'></td>
+</tr>
+
 </table>
+</center>
+</html>
